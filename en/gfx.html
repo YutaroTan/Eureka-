@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GFX & GFX Marine — Green Fuel Optimizer</title>
+  <meta name="description" content="Next-generation, multi-functional green fuel additive for vehicles and marine engines. Improves efficiency 5–10% and reduces emissions.">
+  <!-- Favicon -->
+  <link href="img/favicon.ico" rel="icon">
+
+  <!-- Google Web Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Icon Font Stylesheet -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Libraries Stylesheet -->
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Customized Bootstrap Stylesheet -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Template Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#0a0f14;
+      --muted:#5b6773;
+      --brand:#1aa255;       /* green that pairs well with Eureka */
+      --brand-ink:#0b7e3f;
+      --accent:#e6f6ee;
+      --line:#edf1f4;
+      --card:#f9fbfc;
+      --radius:20px;
+      --shadow:0 8px 30px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+    img{max-width:100%;height:auto;display:block}
+    a{color:var(--brand-ink);text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;backdrop-filter:saturate(160%) blur(8px);background:color-mix(in srgb, var(--bg) 88%, #fff 12%);border-bottom:1px solid var(--line);z-index:20}
+    .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:700}
+    .logo-badge{width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,var(--brand),#87e19f)}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--ink);border-color:transparent;background:var(--ink);color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;transition:transform .15s ease,box-shadow .15s ease, background .2s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.12);background:#101820}
+    .btn.alt{background:var(--brand);color:#07331a}
+    .btn.alt:hover{background:var(--brand-ink);color:#eafff2}
+    /* Hero */
+    .hero{padding:72px 0 32px;position:relative;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border-radius:100px;background:var(--accent);color:var(--brand-ink);font-weight:700}
+    .title{font-size:clamp(36px,6vw,64px);line-height:1.05;letter-spacing:-.02em;margin:.5rem 0 1rem}
+    .lede{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:48ch}
+    .hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .ship{border-radius:16px}
+    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+    .tag{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff}
+    /* Metrics */
+    .band{padding:56px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg,#fff, #fbfdfc)}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .metric{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;text-align:center;box-shadow:var(--shadow)}
+    .metric .n{font-size:40px;font-weight:800;letter-spacing:-.02em}
+    .metric .k{color:var(--muted)}
+    /* Cards */
+    .section{padding:72px 0}
+    .h2{font-size:clamp(28px,3.6vw,40px);letter-spacing:-.02em;margin:0 0 10px}
+    .p{color:var(--muted);max-width:62ch}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:26px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:4px 0 8px}
+    .card p{color:var(--muted)}
+    /* Test highlights */
+    .highlights{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center}
+    .list{margin:0;padding-left:18px;color:var(--muted)}
+    /* Tabs */
+    .tabs{margin-top:24px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+    .tab-head{display:flex;gap:6px;padding:6px;background:#f5faf7;border-bottom:1px solid var(--line)}
+    .tab-btn{flex:1;border:0;background:transparent;padding:12px 10px;border-radius:12px;font-weight:700;cursor:pointer}
+    .tab-btn.active{background:#fff;color:var(--brand-ink);box-shadow:inset 0 -2px 0 var(--brand)}
+    .tab-panels{padding:20px}
+    .panel{display:none}
+    .panel.active{display:block}
+    .usage-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .usage{border:1px dashed var(--line);border-radius:16px;padding:16px}
+    /* Certs & CTA */
+    .certs{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+    .badge{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 12px;box-shadow:var(--shadow);display:flex;gap:10px;align-items:center}
+    .cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(135deg,#eafaf2,#ffffff);border:1px solid var(--line);border-radius:22px;padding:20px}
+    /* Footer */
+    .foot{padding:40px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero-grid,.highlights{grid-template-columns:1fr}
+      .metrics{grid-template-columns:repeat(2,1fr)}
+      .grid3{grid-template-columns:1fr}
+      .usage-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+	<!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow border-top border-5 border-primary sticky-top p-0">
+		<a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <img src="img/logo.png" alt="" width="60" align="center">
+			<h2 class="mb-0 text-primary">Eureka (Germany) GmbH</h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Core Business</a>
+                    <div class="dropdown-menu fade-up m-0">
+                        <a href="shipindustry.html" class="dropdown-item">Comprehensive Maritime Industry Chain Services</a>
+                        <a href="sez.html" class="dropdown-item">Global Industrial Investment and Operations</a>
+                        <a href="gfx.html" class="dropdown-item">Green Fuel Max Marine (GFX)</a>
+                        <a href="ecommerce.html" class="dropdown-item">Digital Ecosystem and Industrial Empowerment</a>
+                    </div>
+                </div>
+
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
+
+                <div class="nav-item d-block d-lg-none mt-3">
+                    <a href="/cn/index.html" class="me-1">中文</a> |
+                    <a href="/en/index.html" class="ms-1">English</a>
+                </div>
+
+            </div>
+
+            <div class="d-flex align-items-center pe-lg-5">
+                <h4 class="m-0 me-3 d-none d-lg-block">
+                    <i class="fa fa-headphones text-primary me-2"></i>+49 40 5247 4156
+                </h4>
+                <div class="language-switch d-none d-lg-block ">
+                    <a href="/cn/index.html" class="me-1">中文</a> |
+                    <a href="/en/index.html" class="ms-1">English</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">New-Generation Green Fuel Additive</span>
+          <h1 class="title">Boost efficiency. Cut emissions. <span style="color:var(--brand)">Protect engines.</span></h1>
+          <p class="lede">GFX &amp; GFX Marine are multi-functional, organic fuel optimizers for vehicles and vessels. Improve fuel economy by 5–10% while reducing CO, NO<sub>x</sub> and particulates—safely and reliably.</p>
+          <div class="tagrow" role="list">
+            <span class="tag" role="listitem">Organic &amp; Non-hazardous</span>
+            <span class="tag" role="listitem">ISO / SGS / Intertek tested</span>
+            <span class="tag" role="listitem">AUD 10M liability cover</span>
+            <span class="tag" role="listitem">Marine &amp; Land engines</span>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#metrics">See the impact</a>
+            <a class="btn alt" href="#usage">Dosing guide</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img class="ship" src="/cn/img/GFM.png" alt="Green vessel sailing at sea">
+        </div>
+      </div>
+    </section>
+
+    <!-- METRICS -->
+    <section id="metrics" class="band">
+      <div class="wrap metrics">
+        <div class="metric">
+          <div class="n" data-count="10">10%</div>
+          <div class="k">Fuel savings (typ.)</div>
+        </div>
+        <div class="metric">
+          <div class="n" data-count="35">35%</div>
+          <div class="k">Carbon reduction (max)</div>
+        </div>
+        <div class="metric">
+          <div class="n" data-count="26">26%</div>
+          <div class="k">CO &amp; NOx reduction*</div>
+        </div>
+        <div class="metric">
+          <div class="n"><span aria-hidden="true">10</span>M</div>
+          <div class="k">AUD liability cover</div>
+        </div>
+      </div>
+      <div class="wrap" style="margin-top:10px">
+        <small class="p">*Measured in real-world marine testing; exhaust temperature decreased by ~2–3 °C, indicating more complete combustion.</small>
+      </div>
+    </section>
+
+    <!-- VALUE PROPS -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2">Beyond additives — fuel &amp; system optimization</h2>
+        <p class="p">Derived from native Australian hardwood extracts, GFX improves atomization, disperses sludge/asphaltenes, inhibits microbial growth, enhances lubricity, and stabilizes cold-flow performance.</p>
+        <div class="grid3">
+          <article class="card">
+            <h3>Combustion Optimization</h3>
+            <p>Non-ionic surfactants lower surface tension; polyol micro-explosions promote flame propagation for more uniform combustion and higher energy conversion.</p>
+          </article>
+          <article class="card">
+            <h3>System Cleaning &amp; Protection</h3>
+            <p>Disperses gums and wax into nano-scale particles, suppresses biofilms (“fuel bugs”), reduces injector fouling and carbon build-up, and protects valves/pumps.</p>
+          </article>
+          <article class="card">
+            <h3>Cold-Flow &amp; Lubricity</h3>
+            <p>Disrupts wax crystal formation and reduces viscosity for reliable starts in cold regions while plant-based lubricants reduce component wear.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEST HIGHLIGHTS -->
+    <section class="section" id="tests">
+      <div class="wrap highlights">
+        <div>
+          <h2 class="h2">Proven in lab &amp; sea trials</h2>
+          <ul class="list">
+            <li><strong>Intertek (MGO):</strong> Higher energy density, improved lubricity &amp; low-temp flow; carbon reduction up to <strong>35%</strong>.</li>
+            <li><strong>On-vessel testing:</strong> CO and NO<sub>x</sub> reduced by ~<strong>26%</strong>; exhaust temperature −<strong>2–3 °C</strong>.</li>
+            <li><strong>Engine efficiency:</strong> Fuel consumption decreased by ~<strong>1.3–1.5%</strong> with improved hydrogen/oxygen content balance.</li>
+          </ul>
+          <p class="p">Results vary with fuel quality and engine conditions; many vessels observe even better savings in practice.</p>
+          <div style="display:flex;gap:10px;margin-top:10px">
+            <a class="btn" href="#contact">Request full reports</a>
+            <a class="btn alt" href="#case">View case study</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1600&auto=format&fit=crop" alt="Engine components clean after treatment">
+        </div>
+      </div>
+    </section>
+
+    <!-- USAGE -->
+    <section id="usage" class="section">
+      <div class="wrap">
+        <h2 class="h2">Simple dosing — rapid adoption</h2>
+        <div class="tabs" data-tabs>
+          <div class="tab-head">
+            <button class="tab-btn active" data-tab="land">Vehicles / Land</button>
+            <button class="tab-btn" data-tab="marine">Marine</button>
+          </div>
+          <div class="tab-panels">
+            <div class="panel active" id="land">
+              <div class="usage-grid">
+                <div class="usage">
+                  <h3>Initial treatment</h3>
+                  <p>Add <strong>1&nbsp;L per 2,000&nbsp;L</strong> of fuel (1:2000). Use immediately after refueling.</p>
+                </div>
+                <div class="usage">
+                  <h3>Maintenance</h3>
+                  <p>Add <strong>1&nbsp;L per 4,000&nbsp;L</strong> of fuel (1:4000) monthly.</p>
+                </div>
+              </div>
+            </div>
+            <div class="panel" id="marine">
+              <div class="usage-grid">
+                <div class="usage">
+                  <h3>Initial treatment</h3>
+                  <p>Inject <strong>1&nbsp;L per 5,000&nbsp;L</strong> via dip port (1:5000). Allow ~48 h for natural mixing.</p>
+                </div>
+                <div class="usage">
+                  <h3>Maintenance</h3>
+                  <p>Inject <strong>1&nbsp;L per 10,000&nbsp;L</strong> (1:10000) after a month or each full voyage.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="p" style="margin-top:10px">Always follow onboard HSSE procedures and OEM guidance.</p>
+      </div>
+    </section>
+
+    <!-- CASE STUDY -->
+    <section id="case" class="section">
+      <div class="wrap">
+        <h2 class="h2">Illustrative savings</h2>
+        <div class="grid3">
+          <article class="card">
+            <h3>Bulk Carrier (LSFO)</h3>
+            <p>Measured fuel savings ~<strong>8–10%</strong>; CO/NO<sub>x</sub> down ~<strong>26%</strong>. Positive CII/EEXI impact and carbon credit upside.</p>
+          </article>
+          <article class="card">
+            <h3>Cost–Benefit Snapshot</h3>
+            <p>At 30 MT/day consumption, a 5% reduction yields material daily savings; additive cost is offset by fuel + carbon credits.</p>
+          </article>
+          <article class="card">
+            <h3>Logistics Truck</h3>
+            <p>With a 1:4000 maintenance dose and 5% savings, a fleet can realize strong annual payback even before spares/maintenance deferrals.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTS & CTA -->
+    <section class="section">
+      <div class="wrap">
+        <h2 class="h2">Safe. Certified. Insured.</h2>
+        <div class="certs">
+          <span class="chip">ISO / SGS / Intertek</span>
+          <span class="chip">MSDS available</span>
+          <span class="chip">AUD 10M liability cover</span>
+          <span class="chip">5+ years shelf stability</span>
+          <span class="chip">Land &amp; Marine engine-safe</span>
+        </div>
+        <div class="cta" id="contact" style="margin-top:20px">
+          <div>
+            <h3 style="margin:0 0 6px;letter-spacing:-.01em">Ready to trial GFX on your route?</h3>
+            <p class="p" style="margin:0">Ask for a pilot dosing plan and the full test dossier.</p>
+          </div>
+          <div style="display:flex;gap:10px">
+            <a class="btn alt" href="mailto:sales@eurekaeu.com">Talk to Sales</a>
+            <a class="btn" href="/en/pdf/GFX2025EN20250708.pdf" download="GFX_Product_Sheet_EN.pdf">Download Product Sheet</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+	<!-- Footer Start -->
+    <div class="footerpage"></div>
+    <!-- Footer End -->
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+	<script>
+	var loadingImg = '<img src="http://demo.wyholding.eu/images/loading.gif" border="0" />';
+	var successImg = '<img src="http://demo.wyholding.eu/images/success.png" border="0" />';
+	var failedImg = '<img src="http://demo.wyholding.eu/images/fail.png" border="0" />';
+
+	$.ajaxSetup({headers: {'X-CSRF-TOKEN': "QFvP0ObgEv3iRRPVI5Q62xjLmpc3xdSyJngr9yf8"}});
+	$(document).ready(function(){
+		$("#acceptbtn").click(function(){
+			$.post("http://demo.wyholding.eu/isaccept",{},function(){
+				$("#showcookiepriacy").hide();
+				//redirecturl("http://demo.wyholding.eu/en/privacy-policy");
+			});
+		});
+	});
+	</script>
+		<script>
+        $(function(){
+            $(".headerpage").load('header.html');
+			$(".footerpage").load("footer.html");
+        });
+    </script>
+    
+  <script>
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Count-up metrics on view
+    const inView = new IntersectionObserver((entries, obs)=>{
+      entries.forEach(entry=>{
+        if(!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = +el.dataset.count;
+        let n = 0; const step = Math.max(1, Math.round(target/60));
+        const t = setInterval(()=>{
+          n += step;
+          if(n >= target){ n = target; clearInterval(t); }
+          el.textContent = n + '%';
+        }, 16);
+        obs.unobserve(el);
+      });
+    }, {threshold: .5});
+    document.querySelectorAll('.metric .n[data-count]').forEach(el=>inView.observe(el));
+
+    // Tabs
+    const tabRoot = document.querySelector('[data-tabs]');
+    if(tabRoot){
+      const btns = tabRoot.querySelectorAll('.tab-btn');
+      const panels = tabRoot.querySelectorAll('.panel');
+      btns.forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+          btns.forEach(b=>b.classList.remove('active'));
+          panels.forEach(p=>p.classList.remove('active'));
+          btn.classList.add('active');
+          tabRoot.querySelector('#'+btn.dataset.tab).classList.add('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

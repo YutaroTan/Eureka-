@@ -489,3 +489,16 @@
         padding: 1rem;
     }
 }
+
+
+.certs > .chip{
+  background:#fff;
+  color:black;
+  border:1px solid var(--line);
+  box-shadow:0 8px 30px rgba(0,0,0,.06);
+  border-radius:12px;
+  padding:10px 12px;
+  font-weight:600;
+  display:inline-flex;
+  align-items:center;
+}

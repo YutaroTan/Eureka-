@@ -29,6 +29,8 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
 </head>
 
 <body>
@@ -54,14 +56,27 @@
                 <a href="index.html" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Core Business</a>
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" data-bs-auto-close="outside">Core Business</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="shipindustry.html" class="dropdown-item">Comprehensive Maritime Industry Chain Services</a>
                         <a href="sez.html" class="dropdown-item">Global Industrial Investment and Operations</a>
-                        <a href="sales.html" class="dropdown-item">Product Representation and Sales</a>
+
+                        <!-- Submenu: Product Representation and Sales -->
+                        <div class="dropend" id="sales-submenu">
+                            <a class="dropdown-item dropdown-toggle" href="#" id="salesDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Product Representation and Sales
+                            </a>
+                            <ul class="dropdown-menu m-0" aria-labelledby="salesDropdown">
+                                <li><a class="dropdown-item" href="gfx.html">GFX</a></li>
+                                <!-- add more products here as needed -->
+                            </ul>
+                        </div>
+
                         <a href="ecommerce.html" class="dropdown-item">Digital Ecosystem and Industrial Empowerment</a>
                     </div>
                 </div>
+
                 <a href="contact.html" class="nav-item nav-link">Contact</a>
 
                 <div class="nav-item d-block d-lg-none mt-3">
@@ -167,12 +182,17 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+
+
 	<script>
         $(function(){
             $(".headerpage").load('header.html');
 			$(".footerpage").load("footer.html");
         });
     </script>
+
+
 </body>
 
 </html>
