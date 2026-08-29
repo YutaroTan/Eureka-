@@ -32,6 +32,85 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+      :root{
+        --bg:#ffffff;
+        --ink:#0a0f14;
+        --muted:#5b6773;
+        --brand:#083893;
+        --brand-ink:#062a6e;
+        --accent:#eaf2fb;
+        --line:#edf1f4;
+        --card:#f9fbfc;
+        --radius:20px;
+        --shadow:0 8px 30px rgba(0,0,0,.06);
+      }
+      .ship-main{font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;color:var(--ink)}
+      .ship-main img{max-width:100%;height:auto;display:block}
+      .wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+      .btn2{display:inline-flex;align-items:center;gap:.5rem;border:1px solid transparent;background:var(--brand);color:#fff;padding:12px 18px;border-radius:14px;font-weight:600;transition:transform .15s ease,box-shadow .15s ease,background .2s ease}
+      .btn2:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.12);background:var(--brand-ink);color:#fff}
+      .btn2.alt{background:#fff;color:var(--brand);border-color:var(--line)}
+      .btn2.alt:hover{background:var(--accent);color:var(--brand-ink)}
+      /* Hero */
+      .ship-hero{padding:64px 0 32px}
+      .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+      .eyebrow{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border-radius:100px;background:var(--accent);color:var(--brand);font-weight:700}
+      .title{font-size:clamp(32px,5vw,52px);line-height:1.1;letter-spacing:-.02em;margin:.5rem 0 1rem}
+      .lede{font-size:clamp(16px,2vw,19px);color:var(--muted);max-width:56ch}
+      .hero-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--shadow)}
+      .hero-card img{border-radius:14px}
+      .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 0}
+      .tag{padding:6px 10px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:.9rem}
+      /* Sections */
+      .ship-section{padding:56px 0}
+      .h2{font-size:clamp(26px,3.2vw,36px);letter-spacing:-.02em;margin:0 0 10px}
+      .p{color:var(--muted);max-width:70ch}
+      .eyebrow-sm{color:var(--brand);font-weight:700;text-transform:uppercase;font-size:.85rem;letter-spacing:.04em}
+      /* Steps */
+      .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:26px}
+      .step{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 14px;text-align:center;box-shadow:var(--shadow)}
+      .step .num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:10px}
+      .step .lbl{font-weight:600;font-size:.95rem}
+      /* Highlights (text + image) */
+      .highlights{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+      .list{margin:0;padding-left:18px;color:var(--muted)}
+      .list li{margin-bottom:6px}
+      .card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;box-shadow:var(--shadow)}
+      .card img{border-radius:12px}
+      .caption{color:var(--muted);font-size:.9rem;margin-top:10px}
+      /* Grids */
+      .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:22px}
+      .grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:22px}
+      .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
+      .mini{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+      .mini h4{margin:0 0 6px;font-size:1rem}
+      .mini p{margin:0;color:var(--muted);font-size:.9rem}
+      .netcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:var(--shadow)}
+      .netcard h4{margin:0 0 10px}
+      .netcard ul{margin:0;padding-left:18px;color:var(--muted)}
+      .netcard ul li{margin-bottom:6px}
+      /* Role cards */
+      .role-card{border-radius:18px;padding:26px}
+      .role-card.dark{background:var(--brand);color:#fff;box-shadow:var(--shadow)}
+      .role-card.dark h3{color:#fff;margin-top:0}
+      .role-card.dark ul{color:#dce6fb}
+      .role-card.light{background:var(--card);border:1px solid var(--line)}
+      .role-card.light h3{margin-top:0}
+      .role-card.light ul{color:var(--muted)}
+      /* CTA */
+      .ship-cta{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(135deg,var(--accent),#ffffff);border:1px solid var(--line);border-radius:22px;padding:24px}
+      /* Responsive */
+      @media (max-width:980px){
+        .hero-grid,.highlights{grid-template-columns:1fr}
+        .steps{grid-template-columns:repeat(2,1fr)}
+        .grid3,.grid2,.grid4{grid-template-columns:1fr 1fr}
+      }
+      @media (max-width:600px){
+        .steps{grid-template-columns:1fr}
+        .grid3,.grid2,.grid4{grid-template-columns:1fr}
+      }
+    </style>
 </head>
 
 <body>
@@ -76,7 +155,7 @@
                     <a href="/cn/index.html" class="me-1">中文</a> |
                     <a href="/en/index.html" class="ms-1">English</a>
                 </div>
-                
+
             </div>
             <div class="d-flex align-items-center pe-lg-5">
                 <h4 class="m-0 me-3 d-none d-lg-block">
@@ -90,7 +169,6 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
 
     <!-- Page Header Start -->
     <div class="container-fluid page-header py-5" style="margin-bottom: 6rem;">
@@ -106,216 +184,225 @@
     </div>
     <!-- Page Header End -->
 
-
-    <!-- Feature Start -->
-    <div class="container-fluid overflow-hidden py-5 px-lg-0">
-        <div class="container feature py-5 px-lg-0">
-            <div class="row g-5 mx-lg-0">
-                <div class="col-lg-6 feature-text wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase mb-3">船舶维修与改装</h6>
-                    <h1 class="mb-5">将中国经验证的船舶维修能力带给欧洲船东</h1>
-                    <p class="mb-4">依托华越集团（W.Y. Group）、FEX及其在中国的战略合作伙伴的船厂、工程及供应链资源，优瑞卡德国将中国的船舶维修及改装服务推广给欧洲船东及船舶管理公司。优瑞卡德国负责欧洲市场开发、商务沟通及项目协调；中国团队负责船厂选择、现场执行及交付。</p>
-                    <p class="mb-3"><strong>坞修、航次及应急维修、船舶改装，以及提效减排改造。</strong></p>
-					<div class="d-flex align-items-center">
-						<i class="fa fa-headphones fa-2x flex-shrink-0 bg-primary p-3 text-white"></i>
-						<div class="ps-4">
-							<h6>请致电</h6>
-							<h3 class="text-primary m-0">+49 40 5247 4156</h3>
-						</div>
-					</div>
-                 </div>
-				 <div class="col-lg-6 pe-lg-0 wow fadeInRight" data-wow-delay="0.1s" style="min-height: 400px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/eureka-repair-boarding.jpg" style="object-fit: cover;" alt="上船服务队登船维修">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row g-3 text-center mt-3 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="col"><div class="bg-light p-3 h-100"><strong>1</strong><br>欧洲询价</div></div>
-                <div class="col"><div class="bg-light p-3 h-100"><strong>2</strong><br>技术澄清</div></div>
-                <div class="col"><div class="bg-light p-3 h-100"><strong>3</strong><br>船厂选择</div></div>
-                <div class="col"><div class="bg-light p-3 h-100"><strong>4</strong><br>项目执行</div></div>
-                <div class="col"><div class="bg-light p-3 h-100"><strong>5</strong><br>交付跟进</div></div>
-            </div>
+  <main class="ship-main">
+    <!-- HERO -->
+    <section class="ship-hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">船舶维修与改装</span>
+          <h1 class="title">将中国经验证的船舶维修能力带给<span style="color:var(--brand)">欧洲船东</span></h1>
+          <p class="lede">依托华越集团（W.Y. Group）、FEX及其在中国的战略合作伙伴的船厂、工程及供应链资源，优瑞卡德国将中国的船舶维修及改装服务推广给欧洲船东及船舶管理公司。优瑞卡德国负责欧洲市场开发、商务沟通及项目协调；中国团队负责船厂选择、现场执行及交付。</p>
+          <div class="tagrow" role="list">
+            <span class="tag" role="listitem">坞修</span>
+            <span class="tag" role="listitem">航次及应急维修</span>
+            <span class="tag" role="listitem">船舶改装</span>
+            <span class="tag" role="listitem">提效减排改造</span>
+          </div>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn2" href="#network">查看船厂网络</a>
+            <a class="btn2 alt" href="contact.html">联系我们</a>
+          </div>
         </div>
-
-        <!-- Scope of Services -->
-        <div class="container feature py-5 px-lg-0">
-            <div class="row g-5 mx-lg-0">
-                <div class="col-lg-6 bg-primary text-white p-5 wow fadeInUp" data-wow-delay="0.1s">
-                    <h3 class="text-white mb-4">服务范围</h3>
-                    <ul class="text-white">
-                        <li>靠泊或锚地航次维修</li>
-                        <li>主机及辅机维修</li>
-                        <li>甲板机械检验及维修</li>
-                        <li>电气及自动化故障排查</li>
-                        <li>导航及通讯设备服务</li>
-                        <li>救生及消防设备检验</li>
-                        <li>钢结构及管路作业</li>
-                        <li>水下检验及维修协调</li>
-                        <li>船级社及法定检验支持</li>
-                        <li>应急技术服务协调</li>
-                    </ul>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s">
-                    <div class="position-relative h-100" style="min-height: 300px;">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/eureka-inspector.jpg" style="object-fit: cover;" alt="集装箱码头检验人员">
-                    </div>
-                    <p class="text-muted small mt-3">针对欧洲各港口的临时维修、技术故障、检验及应急服务，优瑞卡德国根据船舶的日程、位置及技术要求，统筹本地船厂、上船服务队、检验公司及专业工程师。</p>
-                </div>
-            </div>
+        <div class="hero-card">
+          <img src="img/eureka-repair-boarding.jpg" alt="上船服务队登船维修">
         </div>
+      </div>
+    </section>
 
-        <!-- Shipyard Network -->
-        <div class="container feature py-5 px-lg-0">
-            <h6 class="text-secondary text-uppercase mb-3 text-center">战略船厂网络</h6>
-            <h2 class="mb-4 text-center">携手全球领先船厂</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul class="mb-0">
-                        <li>现代重工 &ndash; 韩国</li>
-                        <li>韩进重工 &ndash; 韩国</li>
-                        <li>三星重工 &ndash; 韩国</li>
-                        <li>常石集团 &ndash; 日本</li>
-                        <li>三井E&amp;S &ndash; 日本</li>
-                        <li>今治造船 &ndash; 日本</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="mb-0">
-                        <li>吉宝集团（Seatrium） &ndash; 新加坡</li>
-                        <li>迪拜环球船坞 &ndash; 阿联酋</li>
-                        <li>Sefine、Tersan、Besiktas船厂 &ndash; 土耳其</li>
-                        <li>Azimut Benetti Livorno &ndash; 意大利</li>
-                        <li>SAN GIORGIO DEL PORTO SPA (SGdP) &ndash; 意大利</li>
-                        <li>达门集团（Damen） &ndash; 荷兰</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul class="mb-0">
-                        <li>Emden船厂 &ndash; 德国</li>
-                        <li>Lloyd Werft Bremerhaven &ndash; 德国</li>
-                        <li>Nauta SA修船厂 &ndash; 波兰</li>
-                        <li>Remontowa修船厂 &ndash; 波兰</li>
-                        <li>Viktor Lenac（Palumbo船厂） &ndash; 克罗地亚</li>
-                        <li>Losinjska Plovidba造船厂 &ndash; 克罗地亚</li>
-                    </ul>
-                </div>
-            </div>
+    <!-- PROCESS -->
+    <section class="ship-section">
+      <div class="wrap">
+        <span class="eyebrow-sm">流程说明</span>
+        <h2 class="h2" style="margin-top:8px">从询价到交付</h2>
+        <p class="p">一个协调统一的流程，链接欧洲船东与中国船厂能力。</p>
+        <div class="steps">
+          <div class="step"><div class="num">1</div><div class="lbl">欧洲询价</div></div>
+          <div class="step"><div class="num">2</div><div class="lbl">技术澄清</div></div>
+          <div class="step"><div class="num">3</div><div class="lbl">船厂选择</div></div>
+          <div class="step"><div class="num">4</div><div class="lbl">项目执行</div></div>
+          <div class="step"><div class="num">5</div><div class="lbl">交付跟进</div></div>
         </div>
+      </div>
+    </section>
 
-        <!-- Equipment and Spare Parts -->
-        <div class="container feature py-5 px-lg-0">
-            <div class="row g-5 mx-lg-0 align-items-center">
-                <div class="col-lg-6 wow fadeInLeft" data-wow-delay="0.1s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/eureka-port-truck.jpg" style="object-fit: cover;" alt="港口设备及备件配送">
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.2s">
-                    <h6 class="text-secondary text-uppercase mb-3">设备及备件</h6>
-                    <h2 class="mb-4">链接中国制造能力与欧洲船舶需求</h2>
-                    <p class="mb-4">优瑞卡德国携手中国船舶设备制造商、FEX供应链及欧洲合作伙伴，供应船舶设备、备件、耗材及相关技术支持——统筹询价、技术澄清、供应商筛选、质量文件、集拼、运输、清关及船边交付。</p>
-                    <div class="row g-3">
-                        <div class="col-sm-4"><div class="bg-light p-3 h-100"><strong>主机备件</strong><br><small>主辅机零件、泵类、阀门及管路组件。</small></div></div>
-                        <div class="col-sm-4"><div class="bg-light p-3 h-100"><strong>甲板及电气</strong><br><small>甲板机械、起重设备、电气、自动化及导航组件。</small></div></div>
-                        <div class="col-sm-4"><div class="bg-light p-3 h-100"><strong>安全及耗材</strong><br><small>救生、消防、船用照明、工具、轴承、密封件及OEM替代件。</small></div></div>
-                    </div>
-                </div>
-            </div>
+    <!-- SCOPE OF SERVICES -->
+    <section class="ship-section" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap highlights">
+        <div>
+          <span class="eyebrow-sm">服务范围</span>
+          <h2 class="h2" style="margin-top:8px">统筹欧洲各地的维修、航次维修及检验资源</h2>
+          <ul class="list">
+            <li>靠泊或锚地航次维修</li>
+            <li>主机及辅机维修</li>
+            <li>甲板机械检验及维修</li>
+            <li>电气及自动化故障排查</li>
+            <li>导航及通讯设备服务</li>
+            <li>救生及消防设备检验</li>
+            <li>钢结构及管路作业</li>
+            <li>水下检验及维修协调</li>
+            <li>船级社及法定检验支持</li>
+            <li>应急技术服务协调</li>
+          </ul>
         </div>
-
-        <!-- Provisions and Port Supply -->
-        <div class="container feature py-5 px-lg-0">
-            <div class="row g-5 mx-lg-0 align-items-center">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <h6 class="text-secondary text-uppercase mb-3">物料及港口供应</h6>
-                    <h2 class="mb-4">为船舶提供可靠、及时的港口供应服务</h2>
-                    <p class="mb-4">优瑞卡德国整合本地欧洲资源、中国FEX供应链及Wrist的全球港口服务网络，提供船用物料、船员伙食、免税物资、备件及物流服务。</p>
-                    <div class="row g-3">
-                        <div class="col-sm-6"><div class="bg-light p-3 h-100"><strong>船用物料</strong><br><small>甲板及机舱物料、工具、耗材及清洁用品。</small></div></div>
-                        <div class="col-sm-6"><div class="bg-light p-3 h-100"><strong>船员伙食</strong><br><small>新鲜及冷冻食品、肉类、蔬菜、水果、饮料及干货。</small></div></div>
-                        <div class="col-sm-6"><div class="bg-light p-3 h-100"><strong>免税及船员用品</strong><br><small>免税物资、船员个人用品及符合当地法规的港口供应。</small></div></div>
-                        <div class="col-sm-6"><div class="bg-light p-3 h-100"><strong>物流及交付</strong><br><small>采购、集拼、仓储、清关及船边交付服务。</small></div></div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInRight" data-wow-delay="0.2s" style="min-height: 350px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute img-fluid w-100 h-100" src="img/eureka-warehouse.jpg" style="object-fit: cover;" alt="港口供应仓库">
-                    </div>
-                </div>
-            </div>
+        <div class="card">
+          <img src="img/eureka-inspector.jpg" alt="集装箱码头检验人员">
+          <p class="caption">针对欧洲各港口的临时维修、技术故障、检验及应急服务，优瑞卡德国根据船舶的日程、位置及技术要求，统筹本地船厂、上船服务队、检验公司及专业工程师。</p>
         </div>
+      </div>
+    </section>
 
-        <!-- Wrist Partnership -->
-        <div class="container feature py-5 px-lg-0">
-            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="text-secondary text-uppercase">战略合作</h6>
-                <h2 class="mb-3">与Wrist开展全球船舶供应合作</h2>
-                <p class="mb-0" style="max-width: 900px; margin: 0 auto;">华越（欧洲）控股有限公司、优瑞卡（德国）有限公司、FEX Shipping &amp; Supply Co., Ltd. 与 Wrist Ship Supply A/S 签署四方战略合作协议，在全球范围内开展船用物料、船员伙食、免税物资、备件、港口物流及相关海事服务合作。</p>
-            </div>
-            <div class="row g-4 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="col-md-6">
-                    <div class="bg-primary text-white p-4 h-100">
-                        <h5 class="text-white mb-3">优瑞卡德国的角色</h5>
-                        <ul class="text-white mb-0">
-                            <li>开发及维护欧洲及国际客户</li>
-                            <li>收集需求并协调商务沟通</li>
-                            <li>统筹询价、报价及订单跟进</li>
-                            <li>链接华越集团、FEX、Wrist与终端客户</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="bg-light p-4 h-100">
-                        <h5 class="mb-3">Wrist的贡献</h5>
-                        <ul class="mb-0">
-                            <li>全球港口供应网络</li>
-                            <li>物料及伙食的实体供应</li>
-                            <li>免税物资及船员用品</li>
-                            <li>备件及仓储能力</li>
-                            <li>全球港口的物流及船边执行</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <p class="text-center mt-4 mb-0 wow fadeInUp" data-wow-delay="0.3s"><strong>欧洲客户开发 + 中国供应链 + Wrist全球港口执行网络</strong></p>
+    <!-- SHIPYARD NETWORK -->
+    <section class="ship-section" id="network">
+      <div class="wrap">
+        <span class="eyebrow-sm">战略船厂网络</span>
+        <h2 class="h2" style="margin-top:8px">携手全球领先船厂</h2>
+        <p class="p">网络覆盖亚洲、中东及欧洲，为欧洲船舶链接经验证的船厂产能。</p>
+        <div class="grid3">
+          <div class="netcard">
+            <h4>东亚地区</h4>
+            <ul>
+              <li>现代重工 &ndash; 韩国</li>
+              <li>韩进重工 &ndash; 韩国</li>
+              <li>三星重工 &ndash; 韩国</li>
+              <li>常石集团 &ndash; 日本</li>
+              <li>三井E&amp;S &ndash; 日本</li>
+              <li>今治造船 &ndash; 日本</li>
+            </ul>
+          </div>
+          <div class="netcard">
+            <h4>东南亚、中东及南欧</h4>
+            <ul>
+              <li>吉宝集团（Seatrium） &ndash; 新加坡</li>
+              <li>迪拜环球船坞 &ndash; 阿联酋</li>
+              <li>Sefine、Tersan、Besiktas船厂 &ndash; 土耳其</li>
+              <li>Azimut Benetti Livorno &ndash; 意大利</li>
+              <li>SAN GIORGIO DEL PORTO SPA (SGdP) &ndash; 意大利</li>
+              <li>达门集团（Damen） &ndash; 荷兰</li>
+            </ul>
+          </div>
+          <div class="netcard">
+            <h4>中欧及北欧</h4>
+            <ul>
+              <li>Emden船厂 &ndash; 德国</li>
+              <li>Lloyd Werft Bremerhaven &ndash; 德国</li>
+              <li>Nauta SA修船厂 &ndash; 波兰</li>
+              <li>Remontowa修船厂 &ndash; 波兰</li>
+              <li>Viktor Lenac（Palumbo船厂） &ndash; 克罗地亚</li>
+              <li>Losinjska Plovidba造船厂 &ndash; 克罗地亚</li>
+            </ul>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="container feature py-5 px-lg-0">
-            <div class="row g-0 mx-lg-0"> <!-- Remove gutter spacing -->
-              <div class="col-lg-6 wow fadeInUp d-flex align-items-center" data-wow-delay="0.1s" id="video_box_1">
-                <video
-                  id="my-video"
-                  class="video-js w-100"
-                  controls
-                  preload="auto"
-                  poster="./img/video1_cover.jpg"
-                  data-setup="{}"
-                >
-                  <source src="../cn/video/drilling.mp4" type="video/mp4" />
-                </video>
-              </div>
-          
-              <div class="col-lg-6 wow fadeInRight d-flex align-items-center" data-wow-delay="0.1s" id="video_box_2">
-                <video
-                  id="my-video_1"
-                  class="video-js w-100"
-                  controls
-                  preload="auto"
-                  poster="./img/video2_cover.jpg"
-                  data-setup="{}"
-                >
-                  <source src="../cn/video/22260_1746532178.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>                  
-    </div>
+    <!-- EQUIPMENT AND SPARE PARTS -->
+    <section class="ship-section" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap highlights">
+        <div>
+          <span class="eyebrow-sm">设备及备件</span>
+          <h2 class="h2" style="margin-top:8px">链接中国制造能力与欧洲船舶需求</h2>
+          <p class="p">优瑞卡德国携手中国船舶设备制造商、FEX供应链及欧洲合作伙伴，供应船舶设备、备件、耗材及相关技术支持——统筹询价、技术澄清、供应商筛选、质量文件、集拼、运输、清关及船边交付。</p>
+          <div class="grid3" style="margin-top:18px">
+            <div class="mini"><h4>主机备件</h4><p>主辅机零件、泵类、阀门及管路组件。</p></div>
+            <div class="mini"><h4>甲板及电气</h4><p>甲板机械、起重设备、电气、自动化及导航组件。</p></div>
+            <div class="mini"><h4>安全及耗材</h4><p>救生、消防、船用照明、工具、轴承、密封件及OEM替代件。</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/eureka-port-truck.jpg" alt="港口设备及备件配送">
+        </div>
+      </div>
+    </section>
 
-    <!-- Feature End -->
-        
+    <!-- PROVISIONS AND PORT SUPPLY -->
+    <section class="ship-section">
+      <div class="wrap highlights">
+        <div>
+          <span class="eyebrow-sm">物料及港口供应</span>
+          <h2 class="h2" style="margin-top:8px">为船舶提供可靠、及时的港口供应服务</h2>
+          <p class="p">优瑞卡德国整合本地欧洲资源、中国FEX供应链及Wrist的全球港口服务网络，提供船用物料、船员伙食、免税物资、备件及物流服务。</p>
+          <div class="grid2" style="margin-top:18px">
+            <div class="mini"><h4>船用物料</h4><p>甲板及机舱物料、工具、耗材及清洁用品。</p></div>
+            <div class="mini"><h4>船员伙食</h4><p>新鲜及冷冻食品、肉类、蔬菜、水果、饮料及干货。</p></div>
+            <div class="mini"><h4>免税及船员用品</h4><p>免税物资、船员个人用品及符合当地法规的港口供应。</p></div>
+            <div class="mini"><h4>物流及交付</h4><p>采购、集拼、仓储、清关及船边交付服务。</p></div>
+          </div>
+        </div>
+        <div class="card">
+          <img src="img/eureka-warehouse.jpg" alt="港口供应仓库">
+        </div>
+      </div>
+    </section>
+
+    <!-- WRIST PARTNERSHIP -->
+    <section class="ship-section" style="background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+      <div class="wrap">
+        <div style="text-align:center;max-width:900px;margin:0 auto 10px">
+          <span class="eyebrow-sm">战略合作</span>
+          <h2 class="h2" style="margin-top:8px">与Wrist开展全球船舶供应合作</h2>
+          <p class="p" style="margin:0 auto">华越（欧洲）控股有限公司、优瑞卡（德国）有限公司、FEX Shipping &amp; Supply Co., Ltd. 与 Wrist Ship Supply A/S 签署四方战略合作协议，在全球范围内开展船用物料、船员伙食、免税物资、备件、港口物流及相关海事服务合作。</p>
+        </div>
+        <div class="grid2">
+          <div class="role-card dark">
+            <h3>优瑞卡德国的角色</h3>
+            <ul>
+              <li>开发及维护欧洲及国际客户</li>
+              <li>收集需求并协调商务沟通</li>
+              <li>统筹询价、报价及订单跟进</li>
+              <li>链接华越集团、FEX、Wrist与终端客户</li>
+            </ul>
+          </div>
+          <div class="role-card light">
+            <h3>Wrist的贡献</h3>
+            <ul>
+              <li>全球港口供应网络</li>
+              <li>物料及伙食的实体供应</li>
+              <li>免税物资及船员用品</li>
+              <li>备件及仓储能力</li>
+              <li>全球港口的物流及船边执行</li>
+            </ul>
+          </div>
+        </div>
+        <p class="p" style="text-align:center;margin:22px auto 0;max-width:900px"><strong style="color:var(--ink)">欧洲客户开发 + 中国供应链 + Wrist全球港口执行网络</strong></p>
+      </div>
+    </section>
+
+    <!-- VIDEOS -->
+    <section class="ship-section">
+      <div class="wrap">
+        <span class="eyebrow-sm">实景展示</span>
+        <h2 class="h2" style="margin-top:8px">现场作业实录</h2>
+        <div class="grid2" style="align-items:center">
+          <div class="card">
+            <video id="my-video" class="video-js w-100" controls preload="auto" poster="./img/video1_cover.jpg" data-setup="{}">
+              <source src="../cn/video/drilling.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="card">
+            <video id="my-video_1" class="video-js w-100" controls preload="auto" poster="./img/video2_cover.jpg" data-setup="{}">
+              <source src="../cn/video/22260_1746532178.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ship-section" style="padding-top:0">
+      <div class="wrap">
+        <div class="ship-cta">
+          <div>
+            <h3 style="margin:0 0 6px;letter-spacing:-.01em">准备好安排下一次维修或供应了吗？</h3>
+            <p class="p" style="margin:0">告诉我们船舶的日程、位置及技术要求——其余交给我们协调。</p>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn2" href="mailto:sales@eurekaeu.com">联系销售</a>
+            <a class="btn2 alt" href="contact.html">联系我们</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
     <!-- Footer Start -->
     <div class="footerpage"></div>
